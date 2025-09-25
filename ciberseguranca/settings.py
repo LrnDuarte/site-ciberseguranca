@@ -4,10 +4,14 @@ import dj_database_url
 from dotenv import load_dotenv
 from django.core.exceptions import ImproperlyConfigured
 
+# ========================
 # Caminho base do projeto
+# ========================
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Carrega .env local (só para dev local)
+# ========================
+# Carrega variáveis do .env
+# ========================
 load_dotenv(BASE_DIR / '.env')
 
 # ========================
@@ -25,17 +29,19 @@ DEBUG = os.environ.get('DEBUG', '0') == '1'
 # ========================
 # Hosts permitidos
 # ========================
-ALLOWED_HOSTS = os.environ.get(
-    'ALLOWED_HOSTS', 'site-ciberseguranca-7.onrender.com'
-).split(',')
+ALLOWED_HOSTS = [
+    'site-ciberseguranca-7.onrender.com',
+    'www.site-ciberseguranca-7.onrender.com',
+]
 
 # Domínios confiáveis para CSRF
 CSRF_TRUSTED_ORIGINS = [
-    f'https://{host}' for host in ALLOWED_HOSTS if host
+    'https://site-ciberseguranca-7.onrender.com',
+    'https://www.site-ciberseguranca-7.onrender.com',
 ]
 
 # ========================
-# Aplicações
+# Aplicações instaladas
 # ========================
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -52,7 +58,7 @@ INSTALLED_APPS = [
 # ========================
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # <-- adicionado
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Serve arquivos estáticos no Render Free
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -61,7 +67,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
+# ========================
+# URLs e Templates
+# ========================
 ROOT_URLCONF = 'ciberseguranca.urls'
 
 TEMPLATES = [
@@ -84,7 +92,7 @@ WSGI_APPLICATION = 'ciberseguranca.wsgi.application'
 ASGI_APPLICATION = 'ciberseguranca.asgi.application'
 
 # ========================
-# Banco de dados
+# Banco de dados (Neon)
 # ========================
 DATABASE_URL = os.environ.get('DATABASE_URL')
 if not DATABASE_URL:
@@ -116,8 +124,11 @@ USE_TZ = True
 # Arquivos estáticos
 # ========================
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'site_escola' / 'static']
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [BASE_DIR / 'site_escola' / 'static']  # Desenvolvimento
+STATIC_ROOT = BASE_DIR / 'staticfiles'                     # Produção
+STATICFILES_STORAGE = "whitenoise.storage.StaticFilesStorage"
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
+# ========================
+# Configurações adicionais
+# ========================
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

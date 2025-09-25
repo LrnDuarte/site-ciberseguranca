@@ -66,6 +66,7 @@
 
     <main>
       {% if sucesso %}
+      <!-- Resultado após envio -->
       <div class="resultado-container">
         <div class="resultado-janela {{ result_class }}">
           <h2>{{ result_title }}</h2>
@@ -74,13 +75,16 @@
             <strong>{{ total_questions }}</strong> perguntas.
           </p>
           <p class="mensagem-final">{{ result_message }}</p>
-          <a href="{% url 'index' %}" class="btn-voltar"
-            >Voltar para a página inicial</a
-          >
+          <a href="{% url 'index' %}" class="btn-voltar">
+            Voltar para a página inicial
+          </a>
         </div>
       </div>
       {% else %}
+      <!-- Formulário do Quiz -->
       <form method="post" action="{% url 'quiz' %}">
+        {% csrf_token %}
+
         <section>
           <p><strong>Seu nome completo</strong></p>
           {{ form.nome.errors }} {{ form.nome }}
@@ -104,86 +108,86 @@
         <section>
           <p>1. O que é phishing?</p>
           {{ form.q1.errors }}
-          <label
-            ><input type="radio" name="q1" value="b" /> Um golpe que tenta
-            roubar seus dados</label
-          ><br />
-          <label
-            ><input type="radio" name="q1" value="a" /> Um tipo de vírus que
-            danifica o computador</label
-          ><br />
-          <label
-            ><input type="radio" name="q1" value="c" /> Um aplicativo de
-            segurança</label
-          >
+          <label>
+            <input type="radio" name="q1" value="b" /> Um golpe que tenta
+            roubar seus dados
+          </label><br />
+          <label>
+            <input type="radio" name="q1" value="a" /> Um tipo de vírus que
+            danifica o computador
+          </label><br />
+          <label>
+            <input type="radio" name="q1" value="c" /> Um aplicativo de
+            segurança
+          </label>
         </section>
 
         <section>
           <p>2. Qual é uma boa prática de segurança digital?</p>
           {{ form.q2.errors }}
-          <label
-            ><input type="radio" name="q2" value="a" /> Compartilhar sua senha
-            com amigos</label
-          ><br />
-          <label
-            ><input type="radio" name="q2" value="b" /> Usar a mesma senha para
-            tudo</label
-          ><br />
-          <label
-            ><input type="radio" name="q2" value="c" /> Usar senhas fortes e
-            diferentes</label
-          >
+          <label>
+            <input type="radio" name="q2" value="a" /> Compartilhar sua senha
+            com amigos
+          </label><br />
+          <label>
+            <input type="radio" name="q2" value="b" /> Usar a mesma senha para
+            tudo
+          </label><br />
+          <label>
+            <input type="radio" name="q2" value="c" /> Usar senhas fortes e
+            diferentes
+          </label>
         </section>
 
         <section>
           <p>3. Qual é a função de um antivírus?</p>
           {{ form.q3.errors }}
-          <label
-            ><input type="radio" name="q3" value="a" /> Proteger contra vírus e
-            ameaças</label
-          ><br />
-          <label
-            ><input type="radio" name="q3" value="b" /> Aumentar a velocidade da
-            internet</label
-          ><br />
-          <label
-            ><input type="radio" name="q3" value="c" /> Atualizar o sistema
-            operacional</label
-          >
+          <label>
+            <input type="radio" name="q3" value="a" /> Proteger contra vírus e
+            ameaças
+          </label><br />
+          <label>
+            <input type="radio" name="q3" value="b" /> Aumentar a velocidade da
+            internet
+          </label><br />
+          <label>
+            <input type="radio" name="q3" value="c" /> Atualizar o sistema
+            operacional
+          </label>
         </section>
 
         <section>
           <p>4. O que fazer ao receber um e-mail suspeito?</p>
           {{ form.q4.errors }}
-          <label
-            ><input type="radio" name="q4" value="a" /> Clicar imediatamente no
-            link</label
-          ><br />
-          <label
-            ><input type="radio" name="q4" value="b" /> Ignorar e denunciar como
-            spam</label
-          ><br />
-          <label
-            ><input type="radio" name="q4" value="c" /> Responder pedindo mais
-            informações</label
-          >
+          <label>
+            <input type="radio" name="q4" value="a" /> Clicar imediatamente no
+            link
+          </label><br />
+          <label>
+            <input type="radio" name="q4" value="b" /> Ignorar e denunciar como
+            spam
+          </label><br />
+          <label>
+            <input type="radio" name="q4" value="c" /> Responder pedindo mais
+            informações
+          </label>
         </section>
 
         <section>
           <p>5. Qual é o risco de se expor demais nas redes sociais?</p>
           {{ form.q5.errors }}
-          <label
-            ><input type="radio" name="q5" value="a" /> Nenhum, se for só entre
-            amigos</label
-          ><br />
-          <label
-            ><input type="radio" name="q5" value="b" /> Pode ser usado para
-            aplicar golpes</label
-          ><br />
-          <label
-            ><input type="radio" name="q5" value="c" /> As redes protegem
-            totalmente seus dados</label
-          >
+          <label>
+            <input type="radio" name="q5" value="a" /> Nenhum, se for só entre
+            amigos
+          </label><br />
+          <label>
+            <input type="radio" name="q5" value="b" /> Pode ser usado para
+            aplicar golpes
+          </label><br />
+          <label>
+            <input type="radio" name="q5" value="c" /> As redes protegem
+            totalmente seus dados
+          </label>
         </section>
 
         <button type="submit">Enviar Respostas</button>
