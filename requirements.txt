@@ -1,0 +1,3 @@
+Django>=4.0
+psycopg[binary]>=3.0 # Driver para o banco de dados PostgreSQL
+dj-database-url>=2.0 # Para configurar o banco a partir de uma URL

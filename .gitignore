@@ -1,0 +1,21 @@
+# Arquivos de Bytecode do Python
+__pycache__/
+*.pyc
+
+# Arquivos de ambiente virtual
+venv/
+
+# Arquivo de variáveis de ambiente (contém segredos)
+.env
+
+# Banco de dados local (se você usar)
+db.sqlite3
+
+# Arquivos de mídia enviados pelos usuários
+/media/
+
+# Arquivos estáticos coletados para produção
+/staticfiles/
+
+# Arquivos de log
+*.log

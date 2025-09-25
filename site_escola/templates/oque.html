@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>O que é?</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #2e005f;
+      padding: 2rem;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    nav {
+      background-color: #1a1a1a;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 0 1rem;
+    }
+
+    nav ul li a {
+      color: #b66cff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffffff;
+      transform: scale(1.05);
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #333;
+      padding-bottom: 1rem;
+    }
+
+    h2 {
+      color: #b66cff;
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      text-align: center;
+      padding: 1rem;
+      color: #888;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    /* Interatividade adicional */
+    .highlight {
+      animation: highlightEffect 1s ease-in-out;
+    }
+
+    @keyframes highlightEffect {
+      from {
+        background-color: #333;
+      }
+      to {
+        background-color: transparent;
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .quiz-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #007acc;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .quiz-button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>O que é?</h1>
+    <p>Entenda a importância da Cibersegurança no mundo digital.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Definição</h2>
+      <p>Cibersegurança é como um guarda-costas digital que protege tudo o que fazemos na internet: nossas conversas, fotos, senhas, jogos e redes sociais. Ela serve para evitar que pessoas mal-intencionadas (como hackers) roubem nossos dados, invadam nossas contas ou causem prejuízos. Imagine que sua vida online é como uma casa: você não deixaria a porta aberta, certo? Usar senhas fortes, antivírus e desconfiar de links estranhos são formas de trancar essa porta e manter tudo seguro.</p>
+    </section>
+
+    <section>
+      <h2>Por que é importante?</h2>
+      <p>A cibersegurança é importante porque protege as pessoas e as organizações contra ameaças digitais que podem causar prejuízos sérios. Sem ela, nossas informações pessoais, como senhas, fotos, dados bancários e mensagens, podem ser roubadas ou usadas de forma maliciosa. Além disso, ataques cibernéticos podem derrubar sistemas de hospitais, escolas, empresas e até governos, prejudicando muitas pessoas ao mesmo tempo. Com a internet fazendo parte da nossa vida todos os dias, cuidar da segurança digital é essencial para manter a privacidade, a confiança e o bom funcionamento das atividades online.</p>         
+      <ul>
+        <li>Protege dados pessoais e senhas: Evita que suas informações sejam roubadas ou vazadas.</li>
+        <li>Garante a privacidade online: Mantém suas conversas, fotos e documentos longe de invasores.</li>
+        <li>Evita golpes e fraudes: Reduz o risco de cair em armadilhas digitais, como links falsos e perfis fakes.</li>
+        <li>Aumenta a confiança no ambiente digital: Quando sabemos que estamos seguros, usamos a internet com mais tranquilidade.</li>
+        <li>Cumpre leis de proteção de dados: No caso de empresas, evita multas e problemas legais com leis como a LGPD.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Projeto de Cibersegurança - Por Lorena Valeska</p>
+  </footer>
+</body>
+</html>

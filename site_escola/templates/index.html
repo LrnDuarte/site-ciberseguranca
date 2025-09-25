@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cibersegurança nas Escolas</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <h1>Vamos falar sobre Cibersegurança?</h1>
+      <p>Aprenda a se proteger no mundo digital de forma simples e divertida.</p>
+    </header>
+
+    <!-- Conteúdo da primeira página inserido aqui -->
+<nav>
+  <ul>
+    <li><a href="{% url 'oque' %}">O que é?</a></li>
+    <li><a href="{% url 'boas-praticas' %}">Boas Práticas</a></li>
+    <li><a href="{% url 'phishing' %}">Phishing</a></li>
+    <li><a href="{% url 'malware' %}">Malware</a></li>
+    <li><a href="{% url 'redes-sociais' %}">Redes Sociais</a></li>
+    <li><a href="{% url 'ajuda' %}">Ajuda</a></li>
+  </ul>
+</nav>
+
+    <main style="text-align: center; padding: 40px">
+      <section>
+        <h2>Bem-vindo(a)</h2>
+        <p>Este site é seu guia para usar internet com segurança. Descubra dicas, evite golpes e aprenda brincando</p>
+      </section>
+
+      <!-- Seção original "Pronto para testar seus conhecimentos?" -->
+      <h2 style="margin-top:50px;">Pronto para testar seus conhecimentos?</h2>
+      <p>
+        Responda nosso quiz e veja o quanto você sabe sobre segurança na
+        internet.
+      </p>
+      <a
+        href="{% url 'quiz' %}"
+        style="
+          display: inline-block;
+          margin-top: 20px;
+          padding: 10px 20px;
+          background-color: #007bff;
+          color: white;
+          text-decoration: none;
+          border-radius: 5px;
+        "
+      >Quero jogar o Quiz</a>
+    </main>
+
+    <footer>
+      <p>Projeto de Cibersegurança - Por Lorena Valeska</p>
+    </footer>
+
+    <script src="{% static 'script.js' %}"></script>
+  </body>
+</html>
